@@ -1,0 +1,57 @@
+name: 받은 면접 질문 제출
+description: 면접에서 실제로 받은 질문을 알려주세요. 답변은 안 쓰셔도 됩니다
+title: "[질문] "
+labels: ["received-question", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        가장 반가운 기여입니다. 예상 질문 목록은 어디에나 있지만 **실제로 나온 질문**은 드뭅니다.
+
+        답변을 쓰지 않아도 됩니다. 질문만 있으면 충분합니다.
+  - type: textarea
+    id: questions
+    attributes:
+      label: 받은 질문
+      description: 기억나는 대로 적어주세요. 여러 개면 줄바꿈으로 나눠주세요
+      placeholder: |
+        인덱스를 걸었는데도 느린 쿼리가 있으면 어디를 보나요?
+        복합 인덱스에서 컬럼 순서가 왜 중요한가요?
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: 어떤 면접이었나요 (선택)
+      description: 회사명은 안 적으셔도 됩니다. 규모나 직군만으로도 도움이 됩니다
+      placeholder: 백엔드 신입, 스타트업 / 3년차 경력, 중견 이커머스
+  - type: dropdown
+    id: topic
+    attributes:
+      label: 주제 (선택)
+      description: 아는 만큼만 골라주세요
+      multiple: true
+      options:
+        - 자료구조
+        - 운영체제
+        - 네트워크
+        - 데이터베이스
+        - 캐시
+        - 메시징
+        - 분산 시스템
+        - API 설계
+        - 성능
+        - 보안
+        - 잘 모르겠음
+  - type: textarea
+    id: note
+    attributes:
+      label: 어떻게 답했는지, 무엇이 막혔는지 (선택)
+      description: 막힌 지점을 알려주시면 '흔한 실수' 항목에 반영합니다. 이게 이 저장소에서 가장 유용한 정보입니다
+  - type: checkboxes
+    id: license
+    attributes:
+      label: 확인
+      options:
+        - label: 이 내용이 CC BY-SA 4.0 으로 공개되고, learn-foundry.app 학습 콘텐츠로 반영될 수 있음에 동의합니다
+          required: true

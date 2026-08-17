@@ -1,0 +1,28 @@
+name: 오류 신고
+description: 사실이 틀렸거나 오타가 있습니다
+title: "[오류] "
+labels: ["bug", "good first issue"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: 어느 문서인가요
+      placeholder: questions/database/btree-index.md
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 무엇이 틀렸나요
+      description: 지금 문장과 맞는 내용을 함께 적어주시면 빠르게 고칠 수 있습니다
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 근거 (선택)
+      description: 공식 문서 링크가 있으면 확인이 빠릅니다
+  - type: markdown
+    attributes:
+      value: |
+        직접 고치실 수 있으면 PR 도 환영합니다. 오타 수정은 첫 기여로 좋습니다.

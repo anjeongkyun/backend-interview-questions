@@ -1,0 +1,38 @@
+name: 답변 개선 제안
+description: 답변을 보태거나 '흔한 실수'를 추가합니다
+title: "[개선] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: 어느 질문인가요
+      placeholder: questions/cache/cache-strategies.md 의 "왜 캐시를 삭제하나요"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 어떤 개선인가요
+      options:
+        - 흔한 실수 추가 (이렇게 답하면 틀린다)
+        - 판단 기준 보강 (실무에서 무엇을 보고 고르나)
+        - 비교표 보강
+        - 설명이 어려워서 쉽게 풀어쓰기
+        - 그 외
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 내용
+      description: 본인이 면접에서 틀렸던 방식이면 가장 좋습니다
+    validations:
+      required: true
+  - type: checkboxes
+    id: license
+    attributes:
+      label: 확인
+      options:
+        - label: CC BY-SA 4.0 공개와 learn-foundry.app 반영에 동의합니다
+          required: true
