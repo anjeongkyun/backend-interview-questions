@@ -28,6 +28,9 @@ TOPICS = [
     ('database', '데이터베이스'),
     ('cache', '캐시'),
     ('api-design', 'API 설계'),
+    ('messaging', '메시징'),
+    ('distributed-systems', '분산 시스템'),
+    ('observability', '관측과 운영'),
 ]
 
 

@@ -34,7 +34,7 @@ flowchart TD
 
 </details>
 
-### 어떻게 발견하나요?
+### N+1 문제를 어떻게 발견하나요?
 
 <details>
 <summary>답변</summary>
@@ -55,7 +55,7 @@ flowchart TD
 
 </details>
 
-### 어떻게 해결하나요?
+### N+1 문제를 어떻게 해결하나요?
 
 <details>
 <summary>답변</summary>

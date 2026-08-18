@@ -63,8 +63,8 @@
 - [실무에서 주로 어떤 격리 수준을 쓰나요?](questions/database/isolation-levels.md#실무에서-주로-어떤-격리-수준을-쓰나요)
 - [MySQL과 PostgreSQL의 기본 격리 수준 차이는?](questions/database/isolation-levels.md#mysql과-postgresql의-기본-격리-수준-차이는)
 - [N+1 문제가 무엇이고 왜 생기나요?](questions/database/n-plus-one.md#n1-문제가-무엇이고-왜-생기나요)
-- [어떻게 발견하나요?](questions/database/n-plus-one.md#어떻게-발견하나요)
-- [어떻게 해결하나요?](questions/database/n-plus-one.md#어떻게-해결하나요)
+- [N+1 문제를 어떻게 발견하나요?](questions/database/n-plus-one.md#n1-문제를-어떻게-발견하나요)
+- [N+1 문제를 어떻게 해결하나요?](questions/database/n-plus-one.md#n1-문제를-어떻게-해결하나요)
 - [낙관적 락과 비관적 락의 차이를 설명해주세요](questions/database/optimistic-vs-pessimistic.md#낙관적-락과-비관적-락의-차이를-설명해주세요)
 - [쇼핑몰 재고 차감에 어떤 락 방식이 적합한가요? 이유는?](questions/database/optimistic-vs-pessimistic.md#쇼핑몰-재고-차감에-어떤-락-방식이-적합한가요-이유는)
 - [낙관적 락에서 충돌이 발생하면 어떻게 처리하나요?](questions/database/optimistic-vs-pessimistic.md#낙관적-락에서-충돌이-발생하면-어떻게-처리하나요)
@@ -101,6 +101,33 @@
 - [REST vs GraphQL 차이와 선택 기준은?](questions/api-design/rest-api-design.md#rest-vs-graphql-차이와-선택-기준은)
 - [API 버저닝 전략을 설명해주세요](questions/api-design/rest-api-design.md#api-버저닝-전략을-설명해주세요)
 - [HATEOAS는 왜 실무에서 잘 쓰이지 않나요?](questions/api-design/rest-api-design.md#hateoas는-왜-실무에서-잘-쓰이지-않나요)
+
+### 메시징
+
+- [컨슈머 랙이 계속 늘어납니다. 무엇부터 확인하나요?](questions/messaging/consumer-lag-and-dlq.md#컨슈머-랙이-계속-늘어납니다-무엇부터-확인하나요)
+- [처리에 계속 실패하는 메시지는 어떻게 하나요?](questions/messaging/consumer-lag-and-dlq.md#처리에-계속-실패하는-메시지는-어떻게-하나요)
+- [처리량을 늘리려고 컨슈머를 늘렸는데 효과가 없습니다. 왜일까요?](questions/messaging/consumer-lag-and-dlq.md#처리량을-늘리려고-컨슈머를-늘렸는데-효과가-없습니다-왜일까요)
+- [at-least-once 와 exactly-once 의 차이는 무엇인가요?](questions/messaging/delivery-and-idempotency.md#at-least-once-와-exactly-once-의-차이는-무엇인가요)
+- [같은 메시지가 두 번 와도 안전하게 만드는 방법은?](questions/messaging/delivery-and-idempotency.md#같은-메시지가-두-번-와도-안전하게-만드는-방법은)
+- [순서가 중요한 메시지는 어떻게 다루나요?](questions/messaging/delivery-and-idempotency.md#순서가-중요한-메시지는-어떻게-다루나요)
+
+### 분산 시스템
+
+- [CAP 정리를 설명해주세요.](questions/distributed-systems/cap-and-consistency.md#cap-정리를-설명해주세요)
+- [최종 일관성은 실무에서 어떤 문제를 만드나요?](questions/distributed-systems/cap-and-consistency.md#최종-일관성은-실무에서-어떤-문제를-만드나요)
+- [두 서비스에 걸친 작업의 정합성은 어떻게 맞추나요?](questions/distributed-systems/cap-and-consistency.md#두-서비스에-걸친-작업의-정합성은-어떻게-맞추나요)
+- [타임아웃을 걸지 않으면 무슨 일이 생기나요?](questions/distributed-systems/timeout-retry-circuit-breaker.md#타임아웃을-걸지-않으면-무슨-일이-생기나요)
+- [재시도가 오히려 장애를 키우는 경우는?](questions/distributed-systems/timeout-retry-circuit-breaker.md#재시도가-오히려-장애를-키우는-경우는)
+- [서킷 브레이커는 무엇을 해결하나요?](questions/distributed-systems/timeout-retry-circuit-breaker.md#서킷-브레이커는-무엇을-해결하나요)
+
+### 관측과 운영
+
+- [어떤 기준으로 알림을 걸어야 하나요?](questions/observability/alerting-and-slo.md#어떤-기준으로-알림을-걸어야-하나요)
+- [SLO 와 에러 버짓은 무엇을 결정해주나요?](questions/observability/alerting-and-slo.md#slo-와-에러-버짓은-무엇을-결정해주나요)
+- [장애가 났을 때 알림이 여러 개 쏟아지는 문제는 어떻게 다루나요?](questions/observability/alerting-and-slo.md#장애가-났을-때-알림이-여러-개-쏟아지는-문제는-어떻게-다루나요)
+- [로그, 메트릭, 트레이스는 각각 어떤 질문에 답하나요?](questions/observability/logs-metrics-traces.md#로그-메트릭-트레이스는-각각-어떤-질문에-답하나요)
+- [평균 응답 시간만 보면 무엇을 놓치나요?](questions/observability/logs-metrics-traces.md#평균-응답-시간만-보면-무엇을-놓치나요)
+- [여러 서비스에 걸친 요청이 느릴 때 어떻게 원인을 찾나요?](questions/observability/logs-metrics-traces.md#여러-서비스에-걸친-요청이-느릴-때-어떻게-원인을-찾나요)
 <!-- INDEX:END -->
 
 ## 기여하는 방법
@@ -115,7 +142,7 @@
 
 [![문제로 풀어보기](assets/foundry-practice.svg)](https://learn-foundry.app?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)
 
-읽어서 아는 것과 답할 수 있는 것은 다릅니다. 실무 상황을 가정한 객관식으로 개념을 확인하고, 틀린 문제는 오답노트에 모여 약한 개념부터 다시 보게 됩니다.
+여기서 읽은 개념을 실무 상황을 가정한 문제로 직접 풀면서 검증해보세요. 틀린 문제는 오답노트에 모여 약한 개념부터 다시 볼 수 있습니다.
 
 ## 라이선스
 
