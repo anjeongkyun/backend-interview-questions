@@ -53,7 +53,7 @@
 - [클러스터드 인덱스와 논클러스터드 인덱스의 차이를 설명해주세요](questions/database/clustered-index.md#클러스터드-인덱스와-논클러스터드-인덱스의-차이를-설명해주세요)
 - [MySQL InnoDB에서 PK를 UUID로 설정하면 어떤 문제가 생기나요?](questions/database/clustered-index.md#mysql-innodb에서-pk를-uuid로-설정하면-어떤-문제가-생기나요)
 - [테이블에 클러스터드 인덱스가 1개만 가능한 이유는?](questions/database/clustered-index.md#테이블에-클러스터드-인덱스가-1개만-가능한-이유는)
-- [복합 인덱스의 최좌선 원칙(Leftmost Prefix Rule)을 설명해주세요](questions/database/composite-index.md#복합-인덱스의-최좌선-원칙leftmost-prefix-rule을-설명해주세요)
+- [복합 인덱스는 왜 왼쪽 컬럼부터 순서대로 써야 하나요?](questions/database/composite-index.md#복합-인덱스는-왜-왼쪽-컬럼부터-순서대로-써야-하나요)
 - [복합 인덱스에서 컬럼 순서를 어떻게 결정하나요?](questions/database/composite-index.md#복합-인덱스에서-컬럼-순서를-어떻게-결정하나요)
 - [WHERE A = ? AND C = ? 쿼리가 INDEX(A, B, C)를 활용할 수 있나요?](questions/database/composite-index.md#where-a---and-c---쿼리가-indexa-b-c를-활용할-수-있나요)
 - [데드락이 발생하는 4가지 조건은 무엇인가요?](questions/database/database-deadlock.md#데드락이-발생하는-4가지-조건은-무엇인가요)

@@ -8,7 +8,7 @@
 
 ## 질문
 
-### 복합 인덱스의 최좌선 원칙(Leftmost Prefix Rule)을 설명해주세요
+### 복합 인덱스는 왜 왼쪽 컬럼부터 순서대로 써야 하나요?
 
 <details>
 <summary>답변</summary>
