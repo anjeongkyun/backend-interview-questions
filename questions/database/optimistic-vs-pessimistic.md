@@ -4,11 +4,14 @@
 
 ## 이 개념을 왜 묻나
 
-<!-- 면접관이 이 질문으로 무엇을 확인하려는지 한두 문장으로 적어주세요 -->
+충돌 빈도를 근거로 선택하는지 봅니다. 둘의 정의가 아니라 **무엇을 보고 고르는지**를 묻는 질문입니다.
 
 ## 질문
 
 ### 낙관적 락과 비관적 락의 차이를 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 충돌을 미리 막는지, 나중에 감지하는지가 다릅니다.
 
@@ -25,7 +28,12 @@
 
 **흔한 실수:** 낙관적 락을 "잠금을 안 쓰니 항상 빠르다"고 답하는 것. 갱신하는 순간에는 DB 가 행을 잠급니다. 다른 점은 **읽는 동안 잠그지 않는다**는 것입니다.
 
+</details>
+
 ### 쇼핑몰 재고 차감에 어떤 락 방식이 적합한가요? 이유는?
+
+<details>
+<summary>답변</summary>
 
 경쟁 정도에 따라 다릅니다. 하나로 답하면 반쯤 틀립니다.
 
@@ -47,7 +55,12 @@ UPDATE stock SET qty = qty - 1 WHERE id = ? AND qty > 0
 
 **흔한 실수:** 읽고 확인한 뒤 갱신하는 흐름을 그대로 두고 락만 논하는 것. 문장 하나로 합치는 것이 더 근본적인 해결입니다.
 
+</details>
+
 ### 낙관적 락에서 충돌이 발생하면 어떻게 처리하나요?
+
+<details>
+<summary>답변</summary>
 
 갱신 시 영향받은 행이 0이면 충돌입니다. 그 다음 처리를 정해야 합니다.
 
@@ -69,8 +82,8 @@ UPDATE stock SET qty = qty - 1 WHERE id = ? AND qty > 0
 
 **흔한 실수:** 무한 재시도를 두는 것. 경쟁이 심할 때 서버 부하가 폭증해 상황을 악화시킵니다.
 
-## 연습 문제
+</details>
 
-[learn-foundry.app 에서 이 개념 문제 풀기](https://learn-foundry.app/guides/database/optimistic-vs-pessimistic)
+## 문제로 풀어보기
 
-읽는 것과 답할 수 있는 것은 다릅니다. 객관식으로 확인해보세요.
+[![문제로 풀어보기](../../assets/foundry-practice.svg)](https://learn-foundry.app/guides/database/optimistic-vs-pessimistic?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)

@@ -64,23 +64,55 @@ def broken_tables(md):
     return out
 
 
+def fence_defects(md):
+    """코드블록 서식. mermaid 는 그림이므로 열 정렬 검사에서 빼둔다"""
+    out = []
+    for tag, block in re.findall(r'```([^\n`]*)\n(.*?)```', md, re.S):
+        if tag.strip() == 'mermaid':
+            continue
+        lines = [l for l in block.rstrip('\n').split('\n') if l.strip()]
+        if not lines:
+            continue
+        indent = min(len(l) - len(l.lstrip(' ')) for l in lines)
+        if indent > 0:
+            out.append(f'블록 전체가 {indent}칸 들여쓰기됨: {lines[0].strip()[:40]}')
+        if re.search(r'\\\\', block):
+            out.append(f'역슬래시가 두 개로 보인다: {lines[0].strip()[:40]}')
+    return out
+
+
 def check(path, md):
     errs = []
     for ch, why in BANNED.items():
         if ch in md:
-            errs.append(f'금지 문자 {ch} — {why}')
+            errs.append(f'금지 문자 {ch} 발견. {why}')
     for l in ko_aligned(md):
-        errs.append(f'코드블록에 한글 열 정렬 — 표로 바꿔주세요: {l}')
+        errs.append(f'코드블록에 한글 열 정렬. 표나 mermaid 로 바꿔주세요: {l}')
     for t in broken_tables(md):
         errs.append(f'표 문법 깨짐: {t}')
+    for d in fence_defects(md):
+        errs.append(d)
 
-    # 질문(### )이 있으면 그 아래에 흔한 실수가 있어야 한다
+    # 개수 표기는 늘어날 때마다 고쳐야 하고 아무도 안 고친다
+    for m in re.findall(r'질문\s*\d+\s*개|문서\s*\d+\s*개', md):
+        errs.append(f'개수 표기 "{m}". 늘어나면 틀린 값이 된다')
+
+    # 머리말 뼈대
+    if not re.search(r'^## 이 개념을 왜 묻나', md, re.M):
+        errs.append('"## 이 개념을 왜 묻나" 절이 없다')
+    elif re.search(r'^## 이 개념을 왜 묻나\s*\n+\s*<!--', md, re.M):
+        errs.append('"## 이 개념을 왜 묻나" 가 아직 껍데기다')
+
+    # 질문(### )마다: 답변이 토글 안에 있고, 흔한 실수가 있어야 한다
     sections = re.split(r'\n### ', md)
     for sec in sections[1:]:
         title = sec.split('\n')[0].strip()
-        body = sec
-        # 다음 h2 전까지만 본다
-        body = re.split(r'\n## ', body)[0]
+        body = re.split(r'\n## ', sec)[0]
+        head = body.split('\n', 1)[1] if '\n' in body else ''
+        if '<details>' not in head:
+            errs.append(f'답변이 토글(<details>) 안에 없다: "{title[:40]}"')
+        elif not re.search(r'<summary>[^\n]*</summary>\n\n', body):
+            errs.append(f'<summary> 다음에 빈 줄이 없어 안쪽이 렌더되지 않는다: "{title[:40]}"')
         if '흔한 실수' not in body:
             errs.append(f'흔한 실수 없음: "{title[:40]}"')
         if len(body) < 200:

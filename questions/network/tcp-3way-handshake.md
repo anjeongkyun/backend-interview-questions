@@ -4,11 +4,14 @@
 
 ## 이 개념을 왜 묻나
 
-<!-- 면접관이 이 질문으로 무엇을 확인하려는지 한두 문장으로 적어주세요 -->
+연결이 공짜가 아니라는 것을 아는지 봅니다. 왕복 지연, 연결 재사용, TIME_WAIT 같은 실무 주제로 이어지는 출발점입니다.
 
 ## 질문
 
 ### TCP 3-way handshake 과정을 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 서로 준비됐음을 확인하고 시작 순서 번호를 교환하는 절차입니다.
 
@@ -18,13 +21,28 @@
 | 2 | 서버에서 클라이언트로 | 요청 확인(ACK)과 자기 요청(SYN). 서버 순서 번호를 알린다 |
 | 3 | 클라이언트에서 서버로 | 확인(ACK). 이 시점부터 연결이 확립된다 |
 
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    C->>S: SYN, seq=x
+    S-->>C: SYN + ACK, seq=y, ack=x+1
+    C->>S: ACK, ack=y+1
+    Note over C,S: 연결 확립, 데이터 전송 시작
+```
+
 3단계는 데이터와 함께 보낼 수 있어 실제 추가 지연은 1왕복입니다.
 
 이 과정에서 확인하는 것은 두 가지입니다. **상대가 살아 있고 받을 준비가 됐는지**, 그리고 **양쪽의 순서 번호**입니다. 순서 번호가 있어야 유실과 중복과 순서 뒤바뀜을 판별할 수 있습니다.
 
 **흔한 실수:** 3단계에서 서버가 자리를 잡는다고 답하는 것. 서버는 **2단계에서 이미** 연결 정보를 저장하고 기다립니다. 이 성질이 SYN 홍수 공격의 표면입니다.
 
+</details>
+
 ### 왜 2-way가 아니라 3-way인가요?
+
+<details>
+<summary>답변</summary>
 
 양방향 모두를 확인해야 하기 때문입니다. 2단계로는 한쪽만 확인됩니다.
 
@@ -41,7 +59,12 @@
 
 **흔한 실수:** "예의상 확인한다"처럼 설명하는 것. 순서 번호 동기화와 옛 연결 요청 배제라는 구체적 목적이 있습니다.
 
+</details>
+
 ### TCP 연결 해제 과정(4-way handshake)을 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 양쪽이 각자 "보낼 것을 다 보냈다"를 알려야 하므로 4단계입니다.
 
@@ -58,7 +81,12 @@
 
 **흔한 실수:** 4단계를 3단계로 줄일 수 있다고 답하는 것. B가 보낼 것이 없으면 2와 3이 합쳐지기도 하지만, 일반적으로는 분리됩니다.
 
+</details>
+
 ### SYN Flood 공격이란? 대응 방법은?
+
+<details>
+<summary>답변</summary>
 
 연결 요청만 보내고 마지막 확인을 보내지 않아 **서버의 대기 자리를 채우는** 공격입니다.
 
@@ -80,8 +108,8 @@
 
 **흔한 실수:** 타임아웃을 늘려 대응한다고 답하는 것. 정반대입니다. 오래 기다리면 자리가 더 오래 점유돼 상황이 악화됩니다.
 
-## 연습 문제
+</details>
 
-[learn-foundry.app 에서 이 개념 문제 풀기](https://learn-foundry.app/guides/network/tcp-3way-handshake)
+## 문제로 풀어보기
 
-읽는 것과 답할 수 있는 것은 다릅니다. 객관식으로 확인해보세요.
+[![문제로 풀어보기](../../assets/foundry-practice.svg)](https://learn-foundry.app/guides/network/tcp-3way-handshake?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)

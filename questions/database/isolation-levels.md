@@ -4,11 +4,14 @@
 
 ## 이 개념을 왜 묻나
 
-<!-- 면접관이 이 질문으로 무엇을 확인하려는지 한두 문장으로 적어주세요 -->
+트랜잭션을 격리 수준까지 내려서 이해했는지 봅니다. 이상 현상 이름을 외웠는지가 아니라, 어떤 현상을 감수할지 고를 수 있는지가 핵심입니다.
 
 ## 질문
 
 ### 트랜잭션 격리 수준 4가지를 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 | 수준 | 더티 리드 | 반복 불가 | 팬텀 |
 |------|----------|----------|------|
@@ -29,7 +32,12 @@
 
 **흔한 실수:** SERIALIZABLE 을 기본으로 쓰자고 답하는 것. 동시성이 크게 떨어져 처리량이 무너집니다. 대부분의 서비스는 READ COMMITTED 나 REPEATABLE READ 로 충분합니다.
 
+</details>
+
 ### 실무에서 주로 어떤 격리 수준을 쓰나요?
+
+<details>
+<summary>답변</summary>
 
 대부분 기본값을 그대로 씁니다. MySQL 은 REPEATABLE READ, PostgreSQL 과 Oracle 은 READ COMMITTED 입니다.
 
@@ -44,7 +52,12 @@
 
 **흔한 실수:** 격리 수준만으로 모든 동시성 문제가 해결된다고 보는 것. 읽고 계산해서 쓰는 흐름은 격리 수준과 별개로 잠금이나 조건부 갱신이 필요합니다.
 
+</details>
+
 ### MySQL과 PostgreSQL의 기본 격리 수준 차이는?
+
+<details>
+<summary>답변</summary>
 
 | DB | 기본값 | 이유 |
 |----|--------|------|
@@ -57,8 +70,8 @@
 
 **흔한 실수:** 표준 정의만 외워 답하는 것. 실제 제품의 구현이 표준과 다른 지점이 이 질문의 핵심입니다.
 
-## 연습 문제
+</details>
 
-[learn-foundry.app 에서 이 개념 문제 풀기](https://learn-foundry.app/guides/database/isolation-levels)
+## 문제로 풀어보기
 
-읽는 것과 답할 수 있는 것은 다릅니다. 객관식으로 확인해보세요.
+[![문제로 풀어보기](../../assets/foundry-practice.svg)](https://learn-foundry.app/guides/database/isolation-levels?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)

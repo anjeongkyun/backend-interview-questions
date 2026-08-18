@@ -4,11 +4,14 @@
 
 ## 이 개념을 왜 묻나
 
-<!-- 면접관이 이 질문으로 무엇을 확인하려는지 한두 문장으로 적어주세요 -->
+면접의 첫 질문으로 가장 많이 나옵니다. 정의를 넘어 **왜 그 단위로 나누는지**를 말할 수 있는지 봅니다.
 
 ## 질문
 
 ### 프로세스와 스레드의 차이를 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 독립된 주소 공간을 갖는지가 다릅니다.
 
@@ -24,7 +27,12 @@
 
 **흔한 실수:** 스레드를 "가벼운 프로세스"로만 답하는 것. 무게 차이는 결과이고 원인은 **무엇을 공유하는가**입니다. 그리고 공유가 주는 위험(경쟁 조건, 한 스레드의 오류가 전체를 죽임)을 함께 말하는 것이 좋습니다.
 
+</details>
+
 ### 멀티 프로세스 vs 멀티 스레드, 언제 뭘 쓰나요?
+
+<details>
+<summary>답변</summary>
 
 | 상황 | 고를 것 | 이유 |
 |------|--------|------|
@@ -40,8 +48,8 @@
 
 **흔한 실수:** 스레드가 항상 빠르다고 답하는 것. 공유 자원 경합이 심하면 잠금 대기로 오히려 느려지고, 프로세스로 나눠 각자 처리하는 편이 빠른 경우가 있습니다.
 
-## 연습 문제
+</details>
 
-[learn-foundry.app 에서 이 개념 문제 풀기](https://learn-foundry.app/guides/operating-system/process-vs-thread)
+## 문제로 풀어보기
 
-읽는 것과 답할 수 있는 것은 다릅니다. 객관식으로 확인해보세요.
+[![문제로 풀어보기](../../assets/foundry-practice.svg)](https://learn-foundry.app/guides/operating-system/process-vs-thread?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)

@@ -4,11 +4,14 @@
 
 ## 이 개념을 왜 묻나
 
-<!-- 면접관이 이 질문으로 무엇을 확인하려는지 한두 문장으로 적어주세요 -->
+인덱스를 여러 개 만드는 것과 하나로 묶는 것의 차이를 아는지 봅니다. 실무 튜닝에서 가장 자주 쓰이는 판단입니다.
 
 ## 질문
 
 ### 복합 인덱스의 최좌선 원칙(Leftmost Prefix Rule)을 설명해주세요
+
+<details>
+<summary>답변</summary>
 
 복합 인덱스는 **앞 컬럼부터 차례로 정렬**돼 있어서, 앞 컬럼을 건너뛰면 쓸 수 없습니다.
 
@@ -31,7 +34,12 @@ INDEX (A, B, C) 는 A 로 정렬하고, A 가 같으면 B, 또 같으면 C 로 �
 
 **흔한 실수:** 조건에 쓰인 컬럼이 모두 인덱스에 있으면 탄다고 보는 것. 순서가 규칙을 정합니다.
 
+</details>
+
 ### 복합 인덱스에서 컬럼 순서를 어떻게 결정하나요?
+
+<details>
+<summary>답변</summary>
 
 | 기준 | 내용 |
 |------|------|
@@ -52,7 +60,12 @@ INDEX (created_at, status)   -- 범위 뒤라 status 를 못 쓴다
 
 **흔한 실수:** 무조건 카디널리티가 높은 컬럼을 앞에 두는 것. 등가와 범위의 구분이 우선이고, 그 다음이 선택도입니다.
 
+</details>
+
 ### WHERE A = ? AND C = ? 쿼리가 INDEX(A, B, C)를 활용할 수 있나요?
+
+<details>
+<summary>답변</summary>
 
 **A 까지만** 활용합니다. B 가 빠져 C 의 정렬이 보장되지 않기 때문입니다.
 
@@ -72,8 +85,8 @@ A 로 범위를 좁힌 뒤 그 안에서 C 조건은 하나씩 확인해야 합�
 
 **흔한 실수:** 아예 못 탄다고 답하는 것. A 로는 탑니다. 어디까지 쓰는지를 구분해 답하는 것이 요지입니다.
 
-## 연습 문제
+</details>
 
-[learn-foundry.app 에서 이 개념 문제 풀기](https://learn-foundry.app/guides/database/composite-index)
+## 문제로 풀어보기
 
-읽는 것과 답할 수 있는 것은 다릅니다. 객관식으로 확인해보세요.
+[![문제로 풀어보기](../../assets/foundry-practice.svg)](https://learn-foundry.app/guides/database/composite-index?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)
