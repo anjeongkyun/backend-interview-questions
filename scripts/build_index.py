@@ -31,6 +31,7 @@ TOPICS = [
     ('messaging', '메시징'),
     ('distributed-systems', '분산 시스템'),
     ('observability', '관측과 운영'),
+    ('security', '보안'),
 ]
 
 

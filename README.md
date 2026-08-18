@@ -128,6 +128,18 @@
 - [로그, 메트릭, 트레이스는 각각 어떤 질문에 답하나요?](questions/observability/logs-metrics-traces.md#로그-메트릭-트레이스는-각각-어떤-질문에-답하나요)
 - [평균 응답 시간만 보면 무엇을 놓치나요?](questions/observability/logs-metrics-traces.md#평균-응답-시간만-보면-무엇을-놓치나요)
 - [여러 서비스에 걸친 요청이 느릴 때 어떻게 원인을 찾나요?](questions/observability/logs-metrics-traces.md#여러-서비스에-걸친-요청이-느릴-때-어떻게-원인을-찾나요)
+
+### 보안
+
+- [비밀번호를 어떻게 저장해야 하나요?](questions/security/password-storage.md#비밀번호를-어떻게-저장해야-하나요)
+- [솔트는 무엇을 막나요?](questions/security/password-storage.md#솔트는-무엇을-막나요)
+- [로그인 실패 응답은 어떻게 설계하나요?](questions/security/password-storage.md#로그인-실패-응답은-어떻게-설계하나요)
+- [SQL 인젝션은 왜 생기고 어떻게 막나요?](questions/security/sql-injection.md#sql-인젝션은-왜-생기고-어떻게-막나요)
+- [바인딩할 수 없는 부분은 어떻게 다루나요?](questions/security/sql-injection.md#바인딩할-수-없는-부분은-어떻게-다루나요)
+- [인젝션을 코드 리뷰 없이 잡을 방법이 있나요?](questions/security/sql-injection.md#인젝션을-코드-리뷰-없이-잡을-방법이-있나요)
+- [XSS와 CSRF의 차이를 설명해주세요.](questions/security/xss-and-csrf.md#xss와-csrf의-차이를-설명해주세요)
+- [XSS를 막는 방법을 순서대로 말해주세요.](questions/security/xss-and-csrf.md#xss를-막는-방법을-순서대로-말해주세요)
+- [CSRF는 어떻게 막나요?](questions/security/xss-and-csrf.md#csrf는-어떻게-막나요)
 <!-- INDEX:END -->
 
 ## 기여하는 방법

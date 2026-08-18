@@ -111,8 +111,8 @@ def check(path, md):
         head = body.split('\n', 1)[1] if '\n' in body else ''
         if '<details>' not in head:
             errs.append(f'답변이 토글(<details>) 안에 없다: "{title[:40]}"')
-        elif not re.search(r'<summary>[^\n]*</summary>\n\n', body):
-            errs.append(f'<summary> 다음에 빈 줄이 없어 안쪽이 렌더되지 않는다: "{title[:40]}"')
+        elif not re.search(r'<summary>답변</summary>\n\n', body):
+            errs.append(f'<summary>답변</summary> 다음에 빈 줄이 있어야 안쪽이 렌더된다. 문구도 "답변" 으로 통일한다: "{title[:40]}"')
         if '흔한 실수' not in body:
             errs.append(f'흔한 실수 없음: "{title[:40]}"')
         if len(body) < 200:
