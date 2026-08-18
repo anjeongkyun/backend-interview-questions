@@ -35,6 +35,29 @@ python3 scripts/check_format.py     # 형식 검사
 python3 scripts/build_index.py      # 목차 갱신
 ```
 
+## 커밋 메시지는 영어로
+
+문서는 한국어지만 **커밋 메시지는 영어**로 씁니다. 오픈소스 저장소의 일반 관례이고,
+`git log` 는 저장소를 처음 보는 사람이 읽는 곳입니다.
+
+| 규칙 | 예 |
+|------|-----|
+| 명령형 현재 시제 | `Add`, `Fix`, `Update`. `Added`, `Fixing` 이 아니다 |
+| 첫 줄은 50자 안쪽, 마침표 없이 | `Add canonical terms to concept definitions` |
+| 무엇을 왜 바꿨는지 본문에 | 한 줄 비우고 72자로 줄바꿈 |
+
+**바꾼 내용만 씁니다.** 어디서 제안이 왔는지, 누가 지적했는지 같은 경위는 넣지 않습니다.
+읽는 사람에게 필요한 것은 무엇이 달라졌는지입니다.
+
+```
+좋음:  Add canonical terms to concept definitions
+
+       Answers explained mechanics without naming the standard term, so
+       readers had no short handle to compress the explanation.
+
+나쁨:  대표 용어를 답변 첫 문장에 넣는다 (독자 제보 반영)
+```
+
 ## 리뷰에서 보는 것
 
 | 항목 | 기준 |

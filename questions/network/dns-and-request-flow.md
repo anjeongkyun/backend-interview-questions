@@ -51,7 +51,7 @@ sequenceDiagram
 <details>
 <summary>답변</summary>
 
-가까운 캐시부터 봅니다. 캐시에서 끝나면 네트워크로 나가지 않습니다.
+가까운 캐시부터 보고, 없으면 **재귀 질의**로 루트에서 권한 네임서버까지 내려갑니다. 결과는 **TTL** 동안 캐시됩니다.
 
 ```mermaid
 flowchart TD
