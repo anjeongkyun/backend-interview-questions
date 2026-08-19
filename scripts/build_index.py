@@ -48,7 +48,8 @@ def anchor(heading):
 
 def read_doc(path):
     """(문서 제목, [질문 문장])"""
-    text = open(path, encoding='utf-8').read()
+    with open(path, encoding='utf-8') as f:
+        text = f.read()
     m = re.search(r'^#\s+(.+)$', text, re.M)
     title = m.group(1).strip() if m else os.path.basename(path)
     qs = re.findall(r'^###\s+(.+?)\s*$', text, re.M)
@@ -84,12 +85,14 @@ def main():
         print(index)
         return 0
 
-    text = open(README, encoding='utf-8').read()
+    with open(README, encoding='utf-8') as f:
+        text = f.read()
     if START not in text or END not in text:
         sys.exit(f'README 에 {START} / {END} 표시가 없다')
     head, rest = text.split(START, 1)
     _old, tail = rest.split(END, 1)
-    open(README, 'w', encoding='utf-8').write(f'{head}{START}\n{index}\n{END}{tail}')
+    with open(README, 'w', encoding='utf-8') as f:
+        f.write(f'{head}{START}\n{index}\n{END}{tail}')
 
     print(f'목차 갱신: 토픽 {index.count("### ")}개 / 질문 링크 {index.count(chr(10) + "- ") + 1}개')
     return 0

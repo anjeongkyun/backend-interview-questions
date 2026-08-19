@@ -60,7 +60,8 @@ def wrap_answers(body):
 
 
 def convert(path):
-    text = open(path, encoding='utf-8').read().rstrip('\n')
+    with open(path, encoding='utf-8') as f:
+        text = f.read().rstrip('\n')
     sections = split_sections(text)
     changed, wrapped_total = False, 0
 
@@ -94,7 +95,8 @@ def main():
             rel = os.path.relpath(path, ROOT)
             print(f'  {rel}: 답변 {n}개 토글')
             if apply_now:
-                open(path, 'w', encoding='utf-8').write(new)
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(new)
     print(f'\n문서 {total_docs}개 / 토글 {total_wrapped}개'
           + ('' if apply_now else '\n미리보기만 했다. 적용하려면 --apply'))
     return 0

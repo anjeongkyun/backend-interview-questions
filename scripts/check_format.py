@@ -131,7 +131,8 @@ def main():
                 continue
             p = os.path.join(root, f)
             total += 1
-            errs = check(p, open(p, encoding='utf-8').read())
+            with open(p, encoding='utf-8') as f:
+                errs = check(p, f.read())
             if errs:
                 bad += 1
                 print(f'\n[{p}]')
