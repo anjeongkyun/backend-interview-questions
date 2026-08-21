@@ -17,6 +17,10 @@
 - [실무에서 세마포어가 사용되는 예시를 들어주세요.](questions/operating-system/mutex-vs-semaphore.md#실무에서-세마포어가-사용되는-예시를-들어주세요)
 - [프로세스와 스레드의 차이를 설명해주세요](questions/operating-system/process-vs-thread.md#프로세스와-스레드의-차이를-설명해주세요)
 - [멀티 프로세스 vs 멀티 스레드, 언제 뭘 쓰나요?](questions/operating-system/process-vs-thread.md#멀티-프로세스-vs-멀티-스레드-언제-뭘-쓰나요)
+- [동기와 비동기, 블로킹과 논블로킹의 차이를 설명해주세요](questions/operating-system/sync-async-blocking.md#동기와-비동기-블로킹과-논블로킹의-차이를-설명해주세요)
+- [논블로킹으로 바꿨는데 CPU만 올라가고 처리량이 그대로인 이유는?](questions/operating-system/sync-async-blocking.md#논블로킹으로-바꿨는데-cpu만-올라가고-처리량이-그대로인-이유는)
+- [비동기로 바꾸면 항상 빨라지나요?](questions/operating-system/sync-async-blocking.md#비동기로-바꾸면-항상-빨라지나요)
+- [비동기 프레임워크로 바꿨는데 효과가 없다면 무엇을 확인하나요?](questions/operating-system/sync-async-blocking.md#비동기-프레임워크로-바꿨는데-효과가-없다면-무엇을-확인하나요)
 - [가상 메모리가 무엇이고 왜 필요한가요?](questions/operating-system/virtual-memory.md#가상-메모리가-무엇이고-왜-필요한가요)
 - [페이지 폴트가 나면 무슨 일이 일어나나요?](questions/operating-system/virtual-memory.md#페이지-폴트가-나면-무슨-일이-일어나나요)
 - [스왑이 일어나면 왜 그렇게 느려지나요?](questions/operating-system/virtual-memory.md#스왑이-일어나면-왜-그렇게-느려지나요)
@@ -68,6 +72,10 @@
 - [낙관적 락과 비관적 락의 차이를 설명해주세요](questions/database/optimistic-vs-pessimistic.md#낙관적-락과-비관적-락의-차이를-설명해주세요)
 - [쇼핑몰 재고 차감에 어떤 락 방식이 적합한가요? 이유는?](questions/database/optimistic-vs-pessimistic.md#쇼핑몰-재고-차감에-어떤-락-방식이-적합한가요-이유는)
 - [낙관적 락에서 충돌이 발생하면 어떻게 처리하나요?](questions/database/optimistic-vs-pessimistic.md#낙관적-락에서-충돌이-발생하면-어떻게-처리하나요)
+- [RDB와 NoSQL의 차이를 설명해주세요](questions/database/rdb-vs-nosql.md#rdb와-nosql의-차이를-설명해주세요)
+- [NoSQL로 옮기면 데이터 모델링이 어떻게 달라지나요](questions/database/rdb-vs-nosql.md#nosql로-옮기면-데이터-모델링이-어떻게-달라지나요)
+- [결제나 재고 데이터를 NoSQL에 두면 어떤 문제가 생기나요](questions/database/rdb-vs-nosql.md#결제나-재고-데이터를-nosql에-두면-어떤-문제가-생기나요)
+- [관계형도 확장할 수 있는데 NoSQL로 넘어가는 기준은 무엇인가요](questions/database/rdb-vs-nosql.md#관계형도-확장할-수-있는데-nosql로-넘어가는-기준은-무엇인가요)
 
 ### 캐시
 
