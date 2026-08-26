@@ -160,9 +160,9 @@
 
 ## 문제로 풀어보기
 
-[![문제로 풀어보기](assets/foundry-practice.svg)](https://learn-foundry.app?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)
+[![문제로 풀어보기](assets/foundry-practice.svg)](https://learn-foundry.app/trial?utm_source=github&utm_medium=repo&utm_campaign=oss_questions)
 
-여기서 읽은 개념을 실무 상황을 가정한 문제로 직접 풀면서 검증해보세요. 틀린 문제는 오답노트에 모여 약한 개념부터 다시 볼 수 있습니다.
+여기서 읽은 개념을 실무 상황을 가정한 문제로 풀면서 확인해보세요. **로그인 없이 5문제**를 바로 풀 수 있고, 문제마다 도식이 들어간 개념 가이드가 붙어 있습니다.
 
 ## 라이선스
 
