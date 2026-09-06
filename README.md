@@ -2,6 +2,8 @@
 
 백엔드 면접에서 실제로 나오는 질문을 모으고, 면접관이 듣고 싶어 하는 답변과 함께 **그럴듯하지만 틀리는 답변**까지 적었습니다.
 
+> 읽고 넘어가면 면접에서 안 나옵니다. 로그인 없이 [5문제 풀어보기](https://learn-foundry.app/trial?utm_source=github&utm_medium=repo&utm_campaign=oss_top)
+
 ## 목차
 
 <!-- INDEX:START -->
